@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-24T04:04:45.191Z",
+    "end": "2025-04-24T04:05:32.705Z",
+    "duration": 47514,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "38438155-4344-4151-9cb9-f9969e440c3e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\logout.cy.js",
+      "file": "cypress\\e2e\\logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8f8ae657-d6d3-4966-b261-e02e2ae3d234",
+          "title": "Logout Account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should logout successfullt",
+              "fullTitle": "Logout Account Should logout successfullt",
+              "timedOut": null,
+              "duration": 43217,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://partner.hpe.com/\");\ncy.get(\"#p_p_id_loginPortlet_\", {\n  timeout: 10000\n}).should('be.visible');\ncy.get(\"header > span\", {\n  timeout: 10000\n}).should('be.visible');\ncy.get(\"#oktaEmailInput\").should('be.visible').click();\ncy.get(\"#oktaEmailInput\").type(\"demo_apj_distributor@pproap.com\");\ncy.get(\"#oktaSignInBtn\").should('not.have.class', 'disabled').click();\ncy.get(\"#password-sign-in\", {\n  timeout: 10000\n}).should('be.visible').click();\ncy.get(\"#password-sign-in\").type(\"Login2PRP!\");\ncy.get(\"#onepass-submit-btn\").click();\ncy.origin('https://login-iam.ext.hpe.com', () => {\n  cy.get(\"input[value='Log on']\", {\n    timeout: 10000\n  }).should('be.visible');\n});\ncy.visit(\"https://partner.hpe.com\");\ncy.xpath(\"//a[@id='userIconImg']//img\", {\n  timeout: 10000\n}).should(\"be.visible\");\ncy.get(\"#userIconImg > img\").click();\ncy.xpath(\"//a[@href='/c/portal/logout']\").should('be.visible');\ncy.get(\"li.logOut span\").click();\ncy.location(\"href\").should(\"include\", \"https://partner.hpe.com/web/prp\");",
+              "err": {},
+              "uuid": "8fefa026-37c8-4cda-8cbf-92afbe2cd4d1",
+              "parentUUID": "8f8ae657-d6d3-4966-b261-e02e2ae3d234",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8fefa026-37c8-4cda-8cbf-92afbe2cd4d1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 43217,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
