@@ -1,26 +1,28 @@
-name: Cypress Tests
+name: Run Cypress Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
+    branches: [main]
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run Cypress tests with official action
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          build: npm install
-          start: npm start
-          wait-on: 'http://localhost:3000' # Optional, jika kamu perlu start app dulu
-          wait-on-timeout: 5
-          command: npm run cypress:run # Atau npx cypress run
-          browser: chrome # Optional, bisa chrome, firefox, electron
-
+          command: npm run cypress:run
