@@ -30,6 +30,6 @@ describe("Login account", () => {
   cy.visit("https://partner.hpe.com");
   cy.xpath("//a[@id='userIconImg']//img", 
       { timeout: 10000 })
-      .should("be.visible"); // opsional
+      .should("be.visible"); 
 });
 });

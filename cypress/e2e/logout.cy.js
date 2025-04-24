@@ -17,10 +17,10 @@ describe("Logout Account", () => {
             .click();
         cy.get("#password-sign-in", 
                 { timeout: 10000 })
-                .should('be.visible')
-                .click();
+            .should('be.visible')
+            .click();
         cy.get("#password-sign-in")
-                .type("Login2PRP!");
+            .type("Login2PRP!");
         cy.get("#onepass-submit-btn").click();
         cy.origin('https://login-iam.ext.hpe.com', () => {
         cy.get("input[value='Log on']",
