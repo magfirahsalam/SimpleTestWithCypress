@@ -20,21 +20,7 @@ jobs:
           build: npm install
           start: npm start
           wait-on: 'http://localhost:3000' # Optional, jika kamu perlu start app dulu
+          wait-on-timeout: 5
           command: npm run cypress:run # Atau npx cypress run
           browser: chrome # Optional, bisa chrome, firefox, electron
 
-      - name: Upload Cypress videos
-        if: always()
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-videos
-          path: cypress/videos
-
-      - name: Upload Cypress screenshots
-        if: always()
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots

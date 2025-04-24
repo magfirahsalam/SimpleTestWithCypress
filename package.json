@@ -6,7 +6,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "start": "echo 'No frontend server to start'",
-    "test": "cypress open"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
