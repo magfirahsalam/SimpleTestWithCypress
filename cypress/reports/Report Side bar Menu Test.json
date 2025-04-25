@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-25T03:53:10.407Z",
+    "end": "2025-04-25T03:54:12.165Z",
+    "duration": 61758,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "76460db2-8a3e-4b29-8a0c-171e29ca14f8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\sidebarmenutest.cy.js",
+      "file": "cypress\\e2e\\sidebarmenutest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "900d3892-3a80-4d8c-b3df-e195526c3aca",
+          "title": "dropdown menu",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "tests dropdown menu",
+              "fullTitle": "dropdown menu tests dropdown menu",
+              "timedOut": null,
+              "duration": 57808,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(1280, 800);\ncy.visit(\"https://partner.hpe.com/\");\ncy.get(\"#p_p_id_loginPortlet_\", {\n  timeout: 10000\n}).should('be.visible');\ncy.get(\"header > span\", {\n  timeout: 10000\n}).should('be.visible');\ncy.get(\"#oktaEmailInput\").should('be.visible').click();\ncy.get(\"#oktaEmailInput\").type(\"demo_apj_distributor@pproap.com\");\ncy.get(\"#oktaSignInBtn\").should('not.have.class', 'disabled').click();\ncy.get(\"#password-sign-in\", {\n  timeout: 10000\n}).should('be.visible').click();\ncy.get(\"#password-sign-in\").type(\"Login2PRP!\");\ncy.get(\"#onepass-submit-btn\").click();\ncy.origin('https://login-iam.ext.hpe.com', () => {\n  cy.get(\"input[value='Log on']\", {\n    timeout: 10000\n  }).should('be.visible');\n});\ncy.visit(\"https://partner.hpe.com\");\ncy.xpath(\"//a[@id='userIconImg']//img\").should(\"be.visible\");\ncy.wait(6000);\ncy.get('#headerNavBar').trigger('mouseover', {\n  force: true\n});\ncy.get('#userMenu').trigger('mouseover', {\n  force: true\n});",
+              "err": {},
+              "uuid": "379261ad-e468-4891-85d4-85c8647f5ea4",
+              "parentUUID": "900d3892-3a80-4d8c-b3df-e195526c3aca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "379261ad-e468-4891-85d4-85c8647f5ea4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 57808,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
