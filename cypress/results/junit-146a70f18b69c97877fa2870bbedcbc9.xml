@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="19.137" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-04-25T04:09:49" tests="0" file="cypress\e2e\login_invalid_credential.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Login with invalid credential" timestamp="2025-04-25T04:09:49" tests="1" time="19.135" failures="0">
+    <testcase name="Login with invalid credential tests login_invalid_credentials" time="16.097" classname="tests login_invalid_credentials">
+    </testcase>
+  </testsuite>
+</testsuites>
